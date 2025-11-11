@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة ثلا للتوعية الأمنية</title>
+    <style>
+        /* إعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #da1b60, #ff8a00);
+        }
+        
+        /* صفحة النصائح */
+        .tips-container {
+            display: none;
+            text-align: right;
+        }
+        
+        .tip-card {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border-left: 5px solid #ff8a00;
+        }
+        
+        .tip-card:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateX(-5px);
+        }
+        
+        .tip-card h3 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .tip-card p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .back-btn {
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            margin-top: 30px;
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(to right, #b21f1f, #1a2a6c);
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            .tip-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الصفحة الرئيسية -->
+    <div class="container" id="home-page">
+        <h1>مرحبا بكم في منصة ثلا للتوعية الأمنية</h1>
+        <p>نحن هنا لحمايتك من التهديدات الإلكترونية والروابط الاحتيالية</p>
+        <button class="btn" id="start-btn">ابدأ</button>
+    </div>
+    
+    <!-- صفحة النصائح -->
+    <div class="container tips-container" id="tips-page">
+        <h1>نصائح توعوية ضد الروابط الاحتيالية</h1>
+        
+        <div class="tip-card">
+            <h3>١. تحقق من عنوان الرابط</h3>
+            <p>قبل النقر على أي رابط، تأكد من أن عنوان الموقع صحيح ومطابق للموقع الرسمي. انتبه للأخطاء الإملائية في العنوان.</p>
+        </div>
+        
+        <div class="tip-card">
+            <h3>٢. لا تثق بالروابط القصيرة</h3>
+            <p>الروابط القصيرة قد تخفي الوجهة الحقيقية. استخدم أدوات فك اختصار الروابط لمعرفة الوجهة قبل النقر.</p>
+        </div>
+        
+        <div class="tip-card">
+            <h3>٣. انتبه للطلبات غير المعتادة</h3>
+            <p>إذا طُلب منك إدخال معلومات شخصية أو مصرفية عبر رابط غير متوقع، فتوقف واتصل بالجهة المعنية مباشرة.</p>
+        </div>
+        
+        <div class="tip-card">
+            <h3>٤. تحقق من شهادة الأمان</h3>
+            <p>ابحث عن رمز القفل بجانب عنوان الموقع وتأكد من أن الموقع يستخدم بروتوكول HTTPS وليس HTTP فقط.</p>
+        </div>
+        
+        <div class="tip-card">
+            <h3>٥. استخدم برامج مكافحة الفيروسات</h3>
+            <p>احرص على تثبيت وتحديث برامج مكافحة الفيروسات وبرامج الحماية من التصيد الاحتيالي.</p>
+        </div>
+        
+        <div class="tip-card">
+            <h3>٦. لا تفتح مرفقات البريد الإلكتروني المشبوهة</h3>
+            <p>احذف فوراً أي رسائل بريد إلكتروني تحتوي على مرفقات أو روابط من مرسلين غير معروفين.</p>
+        </div>
+        
+        <button class="btn back-btn" id="back-btn">العودة للصفحة الرئيسية</button>
+    </div>
+
+    <script>
+        // التحكم في التنقل بين الصفحات
+        document.getElementById('start-btn').addEventListener('click', function() {
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('tips-page').style.display = 'block';
+        });
+        
+        document.getElementById('back-btn').addEventListener('click', function() {
+            document.getElementById('tips-page').style.display = 'none';
+            document.getElementById('home-page').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
